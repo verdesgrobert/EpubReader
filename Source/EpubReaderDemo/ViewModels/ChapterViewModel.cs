@@ -12,11 +12,16 @@ namespace EpubReaderDemo.ViewModels
         private bool isTreeItemExpanded;
         private bool isSelected;
 
-        public ChapterViewModel(string title, IEnumerable<ChapterViewModel> subChapters, string htmlContent)
+        public ChapterViewModel(string title, IEnumerable<ChapterViewModel> subChapters, string htmlContent, string htmlId)
         {
             Title = title;
+            foreach (var chap in subChapters)
+            {
+                chap.ParentChapter = this;
+            }
             SubChapters = new ObservableCollection<ChapterViewModel>(subChapters);
             HtmlContent = htmlContent;
+            HtmlId = htmlId;
             isTreeItemExpanded = false;
             isSelected = false;
         }
@@ -50,5 +55,8 @@ namespace EpubReaderDemo.ViewModels
                 OnPropertyChanged(() => IsSelected);
             }
         }
+
+        public string HtmlId { get; set; }
+        public ChapterViewModel ParentChapter { get; internal set; }
     }
 }

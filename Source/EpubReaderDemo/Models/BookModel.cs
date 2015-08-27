@@ -38,7 +38,7 @@ namespace EpubReaderDemo.Models
             foreach (EpubChapter epubChapter in epubChapters)
             {
                 List<ChapterViewModel> subChapters = GetChapters(epubChapter.SubChapters);
-                ChapterViewModel chapterViewModel = new ChapterViewModel(epubChapter.Title, subChapters, epubChapter.HtmlContent);
+                ChapterViewModel chapterViewModel = new ChapterViewModel(epubChapter.Title, subChapters, epubChapter.HtmlContent, epubChapter.HtmlId);
                 result.Add(chapterViewModel);
             }
             return result;

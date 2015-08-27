@@ -37,12 +37,6 @@
     <ApplicationIcon>Resources\Book_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="HtmlRenderer">
-      <HintPath>..\packages\HtmlRenderer.Core.1.5.0.5\lib\net45\HtmlRenderer.dll</HintPath>
-    </Reference>
-    <Reference Include="HtmlRenderer.WPF">
-      <HintPath>..\packages\HtmlRenderer.WPF.1.5.0.5\lib\net45\HtmlRenderer.WPF.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -163,6 +157,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\HTML-Renderer\Source\HtmlRenderer.WPF\HtmlRenderer.WPF.csproj">
+      <Project>{7e4e8db5-85ad-4388-bdcb-38c6f423b8b0}</Project>
+      <Name>HtmlRenderer.WPF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\HTML-Renderer\Source\HtmlRenderer\HtmlRenderer.csproj">
+      <Project>{fe611685-391f-4e3e-b27e-d3150e51e49b}</Project>
+      <Name>HtmlRenderer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\VersFx.Formats.Text.Epub\VersFx.Formats.Text.Epub.csproj">
       <Project>{313e44f0-4bc2-4a4f-b24b-c29d8ffb7c4e}</Project>
       <Name>VersFx.Formats.Text.Epub</Name>

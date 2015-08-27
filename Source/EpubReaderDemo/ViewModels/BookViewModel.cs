@@ -8,6 +8,7 @@ using System.Windows.Input;
 using EpubReaderDemo.Models;
 using EpubReaderDemo.Utils;
 using VersFx.Formats.Text.Epub;
+using EpubReaderDemo.Views;
 
 namespace EpubReaderDemo.ViewModels
 {
@@ -23,6 +24,9 @@ namespace EpubReaderDemo.ViewModels
         private ChapterContentViewModel selectedChapterContent;
         private Command selectChapterCommand;
 
+        public BookViewModel()
+        {
+        }
         public BookViewModel(int bookId)
         {
             bookModel = new BookModel();
@@ -52,6 +56,7 @@ namespace EpubReaderDemo.ViewModels
                 OnPropertyChanged(() => SelectedChapterContent);
             }
         }
+        public string SelectedElement { get; set; }
 
         public ICommand SelectChapterCommand
         {
@@ -65,12 +70,48 @@ namespace EpubReaderDemo.ViewModels
 
         private void SelectChapter(ChapterViewModel chapterViewModel)
         {
-            if (selectedChapter != null)
-                selectedChapter.IsSelected = false;
-            selectedChapter = chapterViewModel;
-            selectedChapter.IsTreeItemExpanded = true;
-            selectedChapter.IsSelected = true;
-            SelectedChapterContent = new ChapterContentViewModel(selectedChapter.HtmlContent, images, styleSheets, fonts);
+            if (string.IsNullOrEmpty(chapterViewModel.HtmlId))
+            {
+                bool samePage = false;
+                if (selectedChapter != null)
+                {
+                    selectedChapter.IsSelected = false;
+                    if (selectedChapter == chapterViewModel || (!string.IsNullOrEmpty(selectedChapter.HtmlId) && chapterViewModel.ParentChapter == selectedChapter))
+                    {
+                        selectedChapter = null;
+                        selectedChapterContent = null;
+                        samePage = true;
+
+                    }
+                }
+                selectedChapter = chapterViewModel;
+                selectedChapter.IsTreeItemExpanded = true;
+                selectedChapter.IsSelected = true;
+                SelectedChapterContent = new ChapterContentViewModel(selectedChapter.HtmlContent, images, styleSheets, fonts);
+                if (BookView.View != null && samePage)
+                    BookView.View.ScrollTo("");
+            }
+            else
+            {
+                if (selectedChapter == null)
+                {
+                    selectedChapter = chapterViewModel.ParentChapter;
+                }
+                else
+                    selectedChapter.IsSelected = false;
+                selectedChapter = chapterViewModel;
+                selectedChapter.IsTreeItemExpanded = true;
+                selectedChapter.IsSelected = true;
+                if (SelectedChapterContent.HtmlContent != chapterViewModel.ParentChapter.HtmlContent)
+                    SelectedChapterContent = new ChapterContentViewModel(chapterViewModel.ParentChapter.HtmlContent, images, styleSheets, fonts);
+                Task.Run(async () =>
+                {
+                    await Task.Delay(100);
+                    if (BookView.View != null)
+                        BookView.View.ScrollTo(chapterViewModel.HtmlId);
+                });
+                // SelectedElement = chapterViewModel.HtmlContent;
+            }
         }
     }
 }

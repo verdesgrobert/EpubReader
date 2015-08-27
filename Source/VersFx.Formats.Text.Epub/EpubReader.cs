@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Fizzler.Systems.HtmlAgilityPack;
+using HtmlAgilityPack;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -58,12 +60,13 @@ namespace VersFx.Formats.Text.Epub
             return LoadChapters(book, book.Schema.Navigation.NavMap, epubArchive);
         }
 
-        private static List<EpubChapter> LoadChapters(EpubBook book, List<EpubNavigationPoint> navigationPoints, ZipArchive epubArchive)
+        private static List<EpubChapter> LoadChapters(EpubBook book, List<EpubNavigationPoint> navigationPoints, ZipArchive epubArchive, EpubChapter parentChapter = null)
         {
             List<EpubChapter> result = new List<EpubChapter>();
             foreach (EpubNavigationPoint navigationPoint in navigationPoints)
             {
                 EpubChapter chapter = new EpubChapter();
+                chapter.Book = book;
                 chapter.Title = navigationPoint.NavigationLabels.First().Text;
                 int contentSourceAnchorCharIndex = navigationPoint.Content.Source.IndexOf('#');
                 if (contentSourceAnchorCharIndex == -1)
@@ -77,9 +80,31 @@ namespace VersFx.Formats.Text.Epub
                 if (!book.Content.Html.TryGetValue(chapter.ContentFileName, out htmlContentFile))
                     throw new Exception(String.Format("Incorrect EPUB manifest: item with href = \"{0}\" is missing", chapter.ContentFileName));
                 chapter.HtmlContent = htmlContentFile.Content;
-                chapter.SubChapters = LoadChapters(book, navigationPoint.ChildNavigationPoints, epubArchive);
+                chapter.SubChapters = LoadChapters(book, navigationPoint.ChildNavigationPoints, epubArchive, chapter);
                 result.Add(chapter);
             }
+            //if (result.Count == 0 && parentChapter != null)
+            //{
+            //    var html = parentChapter.HtmlContent;
+            //    HtmlDocument doc = new HtmlDocument();
+            //    doc.LoadHtml(html);
+            //    int count = 0;
+            //    foreach (var node in doc.DocumentNode.QuerySelectorAll("p"))
+            //    {
+            //        EpubChapter chapter = new EpubChapter();
+            //        chapter.Title = node.InnerText.Substring(0, Math.Min(node.InnerText.Length, 80));
+            //        if (chapter.Title.Length < node.InnerText.Length)
+            //            chapter.Title = chapter.Title.Substring(0, chapter.Title.LastIndexOf(" "));
+            //        node.SetAttributeValue("id", "p" + count);
+            //        count++;
+            //        chapter.HtmlId = node.Id;
+            //        chapter.HtmlContent = node.InnerHtml;
+            //        chapter.SubChapters = LoadChapters(book, new List<EpubNavigationPoint>(), epubArchive);
+            //        result.Add(chapter);
+            //    }
+            //    parentChapter.HtmlContent = doc.DocumentNode.InnerHtml;
+
+            //}
             return result;
         }
     }

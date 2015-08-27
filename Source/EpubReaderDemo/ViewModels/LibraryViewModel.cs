@@ -89,7 +89,7 @@ namespace EpubReaderDemo.ViewModels
         {
             BookViewModel bookViewModel = new BookViewModel(book.Id);
             IWindowContext bookWindowContext = windowManager.CreateWindow(bookViewModel);
-            bookWindowContext.ShowDialog();
+            bookWindowContext.Show();
         }
     }
 }
