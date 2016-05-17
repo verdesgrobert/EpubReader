@@ -206,6 +206,7 @@
     <None Include="Licenses\PTSans\PT Free Font License_rus_1.2.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="settings.xml" />
     <Resource Include="Data\EGWTranslate\2MCP\it\META-INF\container.xml" />
     <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\aboutbook.html" />
     <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\bookstyles.css" />
