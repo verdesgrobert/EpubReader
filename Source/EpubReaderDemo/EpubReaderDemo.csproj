@@ -153,6 +153,23 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Data\EGWTranslate\1MCP\en.epub" />
+    <None Include="Data\EGWTranslate\1MCP\en.pdf" />
+    <None Include="Data\EGWTranslate\1MCP\es.epub" />
+    <None Include="Data\EGWTranslate\1MCP\es.pdf" />
+    <None Include="Data\EGWTranslate\1MCP\ro.epub" />
+    <None Include="Data\EGWTranslate\1MCP\ro.pdf" />
+    <None Include="Data\EGWTranslate\2MCP\en.epub" />
+    <None Include="Data\EGWTranslate\2MCP\en.pdf" />
+    <None Include="Data\EGWTranslate\2MCP\es.epub" />
+    <None Include="Data\EGWTranslate\2MCP\es.pdf" />
+    <None Include="Data\EGWTranslate\2MCP\it.epub" />
+    <None Include="Data\EGWTranslate\2MCP\it.pdf" />
+    <None Include="Data\EGWTranslate\2MCP\it\mimetype" />
+    <None Include="Data\EGWTranslate\2MCP\it\OEBPS\content.opf" />
+    <None Include="Data\EGWTranslate\2MCP\it\OEBPS\toc.ncx" />
+    <None Include="Data\EGWTranslate\2MCP\ro.epub" />
+    <None Include="Data\EGWTranslate\2MCP\ro.pdf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -187,6 +204,78 @@
   <ItemGroup>
     <None Include="Licenses\PTSans\PT Free Font License_eng_1.2.txt" />
     <None Include="Licenses\PTSans\PT Free Font License_rus_1.2.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Data\EGWTranslate\2MCP\it\META-INF\container.xml" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\aboutbook.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\bookstyles.css" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content00.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content01.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content02.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content03.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content04.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content05.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content06.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content07.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content08.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content09.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content10.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content11.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content12.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content13.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content14.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content15.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content16.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content17.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content18.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content19.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content20.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content21.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content22.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content23.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content24.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content25.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content26.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content27.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content28.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content29.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content30.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content31.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content32.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content33.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content34.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content35.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content36.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content37.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content38.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content39.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content40.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content41.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content42.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content43.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content44.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content45.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content46.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content47.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content48.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content49.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content50.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content51.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content52.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content53.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content54.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content55.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content56.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content57.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content58.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content59.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content60.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\content61.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\cover.css" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\cover.html" />
+    <Resource Include="Data\EGWTranslate\2MCP\it\OEBPS\cover.jpg" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\titlepage.html" />
+    <Content Include="Data\EGWTranslate\2MCP\it\OEBPS\toc.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
