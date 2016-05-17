@@ -15,10 +15,10 @@ namespace EpubReaderDemo
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            BookViewModel libraryViewModel = new BookViewModel();
-            IWindowContext libraryWindowContext = WindowManager.Instance.CreateWindow(libraryViewModel);
-            libraryWindowContext.Closed += (sender, args) => Shutdown();
-            libraryWindowContext.Show();
+            TranslationViewModel startViewModel = new TranslationViewModel();
+            IWindowContext startViewModelContext = WindowManager.Instance.CreateWindow(startViewModel);
+            startViewModelContext.Closed += (sender, args) => Shutdown();
+            startViewModelContext.Show();
         }
     }
 }

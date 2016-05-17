@@ -1,0 +1,71 @@
+﻿<Window x:Class="EpubReaderDemo.Views.TranslationView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:EpubReaderDemo.Controls"
+        xmlns:utils="clr-namespace:EpubReaderDemo.Utils"
+        xmlns:views="clr-namespace:EpubReaderDemo.Views" xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:EpubReaderDemo.ViewModels"
+        mc:Ignorable="d"
+        Title="EpubReader demo — Book" Width="1024" Height="768"
+        Style="{StaticResource windowStyle}"
+        x:Name="root" d:DataContext="{d:DesignInstance viewModels:TranslationViewModel}">
+    <Window.Resources>
+        <utils:ShowWatermarkBackgroundConverter x:Key="ShowWatermarkBackgroundConverter"/>
+        <utils:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        <utils:WidthConverter x:Key="WidthConverter"/>
+        <DataTemplate x:Key="resultItemTemplate">
+            <StackPanel Margin="0,2" MaxWidth="{Binding ElementName=lstResults,Path=ActualWidth,Converter={StaticResource WidthConverter}}">
+                <TextBlock TextWrapping="Wrap" TextTrimming="WordEllipsis" TextAlignment="Justify" ><Run Text="{Binding BeforeResult}"/><Run Text="{Binding Result}" FontWeight="Bold"/><Run Text="{Binding AfterResult}"/></TextBlock>
+                <TextBlock Text="{Binding Reference.Reference}" FontStyle="Italic"/>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="240" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+
+        <TabControl>
+            <TabItem Header="Capitole">
+                <controls:ContentsTreeView Grid.Row="1" ItemsSource="{Binding Contents}">
+                    <controls:ContentsTreeView.ItemContainerStyle>
+                        <Style TargetType="TreeViewItem" BasedOn="{StaticResource {x:Type TreeViewItem}}">
+                            <Setter Property="IsExpanded" Value="{Binding Path=IsTreeItemExpanded, Mode=TwoWay}" />
+                        </Style>
+                    </controls:ContentsTreeView.ItemContainerStyle>
+                    <controls:ContentsTreeView.ItemTemplate>
+                        <HierarchicalDataTemplate ItemsSource="{Binding SubChapters}">
+                            <controls:ContentsButton Content="{Binding Title}"  Command="{Binding DataContext.SelectChapterCommand, RelativeSource={RelativeSource AncestorType=controls:ContentsTreeView}}" CommandParameter="{Binding}" />
+                        </HierarchicalDataTemplate>
+                    </controls:ContentsTreeView.ItemTemplate>
+                </controls:ContentsTreeView>
+
+            </TabItem>
+            <TabItem x:Name="parentTabItem">
+                <TabItem.Header>
+                    <Grid>
+                        <TextBlock TextAlignment="Center" Foreground="Gray" Text="Introduce termenii de cautare..."/>
+                        <TextBox x:Name="txtSearch" Visibility="{Binding ElementName=parentTabItem,Path=IsSelected,Converter={StaticResource BooleanToVisibilityConverter}}" KeyUp="TxtSearch_OnKeyUp" Background="{Binding ElementName=root,Path=ShowWatermark,Converter={StaticResource ShowWatermarkBackgroundConverter}}"/>
+                    </Grid>
+                </TabItem.Header>
+                <ListView x:Name="lstResults"  Grid.Row="1" ItemTemplate="{StaticResource resultItemTemplate}" />
+            </TabItem>
+        </TabControl>
+        <GridSplitter Grid.Column="1" Width="4" Height="Auto" HorizontalAlignment="Stretch" Background="White" />
+        <controls:BookHtmlContent x:Name="bookHTML"  Grid.Column="2" ChapterContent="{Binding SelectedChapterContent}" />
+        <Grid Grid.Column="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <controls:BookHtmlContent x:Name="book1HTML"  Grid.Column="0" ChapterContent="{Binding SelectedChapterContent}" />
+            <controls:BookHtmlContent x:Name="book2HTML"  Grid.Column="1" ChapterContent="{Binding SelectedChapterContent1}" />
+            <controls:BookHtmlContent x:Name="book3HTML"  Grid.Column="2" ChapterContent="{Binding SelectedChapterContent2}" />
+        </Grid>
+    </Grid>
+</Window>

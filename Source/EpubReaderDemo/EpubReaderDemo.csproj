@@ -79,10 +79,14 @@
     <Compile Include="Utils\Command.cs" />
     <Compile Include="Utils\ExpressionUtils.cs" />
     <Compile Include="Utils\IntToDoubleConverter.cs" />
+    <Compile Include="ViewModels\TranslationViewModel.cs" />
     <Compile Include="ViewModels\BookViewModel.cs" />
     <Compile Include="ViewModels\ChapterContentViewModel.cs" />
     <Compile Include="ViewModels\ChapterViewModel.cs" />
     <Compile Include="ViewModels\ViewModel.cs" />
+    <Compile Include="Views\TranslationView.xaml.cs">
+      <DependentUpon>TranslationView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\BookView.xaml.cs">
       <DependentUpon>BookView.xaml</DependentUpon>
     </Compile>
@@ -117,6 +121,10 @@
     <Page Include="Styles\Common.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TranslationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\BookView.xaml">
       <SubType>Designer</SubType>

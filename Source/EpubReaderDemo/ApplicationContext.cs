@@ -19,7 +19,7 @@ namespace EpubReaderDemo
 
         static ApplicationContext()
         {
-            instance = new ApplicationContext();
+           instance = new ApplicationContext();
         }
 
         private ApplicationContext()
@@ -68,7 +68,15 @@ namespace EpubReaderDemo
             using (FileStream fileStream = new FileStream(SETTINGS_FILE_NAME, FileMode.Open))
             {
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(Settings));
-                Settings result = (Settings)xmlSerializer.Deserialize(fileStream);
+                Settings result = null;
+                try
+                {
+                    result = (Settings)xmlSerializer.Deserialize(fileStream);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
                 return result;
             }
         }
