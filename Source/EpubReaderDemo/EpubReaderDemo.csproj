@@ -153,48 +153,48 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Data\EGWTranslate\1MCP\en.epub">
+    <Content Include="Data\EGWTranslate\1MCP\en.epub">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Data\EGWTranslate\1MCP\en.pdf">
+    </Content>
+    <Content Include="Data\EGWTranslate\1MCP\en.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Data\EGWTranslate\1MCP\es.epub">
+    </Content>
+    <Content Include="Data\EGWTranslate\1MCP\es.epub">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Data\EGWTranslate\1MCP\es.pdf">
+    </Content>
+    <Content Include="Data\EGWTranslate\1MCP\es.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Data\EGWTranslate\1MCP\ro.epub">
+    </Content>
+    <Content Include="Data\EGWTranslate\1MCP\ro.epub">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Data\EGWTranslate\1MCP\ro.pdf">
+    </Content>
+    <Content Include="Data\EGWTranslate\1MCP\ro.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Data\EGWTranslate\2MCP\en.epub">
+    </Content>
+    <Content Include="Data\EGWTranslate\2MCP\en.epub">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Data\EGWTranslate\2MCP\en.pdf">
+    </Content>
+    <Content Include="Data\EGWTranslate\2MCP\en.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Data\EGWTranslate\2MCP\es.epub">
+    </Content>
+    <Content Include="Data\EGWTranslate\2MCP\es.epub">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Data\EGWTranslate\2MCP\es.pdf">
+    </Content>
+    <Content Include="Data\EGWTranslate\2MCP\es.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Data\EGWTranslate\2MCP\it.epub">
+    </Content>
+    <Content Include="Data\EGWTranslate\2MCP\it.epub">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Data\EGWTranslate\2MCP\it.pdf">
+    </Content>
+    <Content Include="Data\EGWTranslate\2MCP\it.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Data\EGWTranslate\2MCP\ro.epub">
+    </Content>
+    <Content Include="Data\EGWTranslate\2MCP\ro.epub">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Data\EGWTranslate\2MCP\ro.pdf">
+    </Content>
+    <Content Include="Data\EGWTranslate\2MCP\ro.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    </Content>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
