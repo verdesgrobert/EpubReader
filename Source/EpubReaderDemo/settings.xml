@@ -3,19 +3,19 @@
   <Books>
     <Book>
       <Id>1</Id>
-      <FilePath>D:\EGWTranslate\1MCP\en.epub</FilePath>
+      <FilePath>Data\EGWTranslate\1MCP\en.epub</FilePath>
       <Title>Mind character and Personality</Title>
       <HasCover>false</HasCover>
     </Book>
     <Book>
       <Id>2</Id>
-      <FilePath>D:\EGWTranslate\1MCP\ro.epub</FilePath>
+      <FilePath>Data\EGWTranslate\1MCP\ro.epub</FilePath>
       <Title>Minte caracter si personalitate</Title>
       <HasCover>false</HasCover>
     </Book>
     <Book>
       <Id>3</Id>
-      <FilePath>D:\EGWTranslate\1MCP\es.epub</FilePath>
+      <FilePath>Data\EGWTranslate\1MCP\es.epub</FilePath>
       <Title>Mente caracter y personalidad</Title>
       <HasCover>false</HasCover>
     </Book>

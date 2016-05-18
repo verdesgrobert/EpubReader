@@ -29,6 +29,16 @@ namespace EpubReaderDemo.Views
             ShowWatermark = true;
             txtSearch.GotFocus += TxtSearch_GotFocus;
             txtSearch.LostFocus += TxtSearch_LostFocus;
+            book1HTML.Scrolled += BookHTML_Scrolled;
+            book2HTML.Scrolled += BookHTML_Scrolled;
+            book3HTML.Scrolled += BookHTML_Scrolled;
+        }
+
+        private void BookHTML_Scrolled(object sender, System.Windows.Controls.Primitives.ScrollEventArgs e)
+        {
+            book1HTML.ScrollVertically(e.NewValue);
+            book2HTML.ScrollVertically(e.NewValue);
+            book3HTML.ScrollVertically(e.NewValue);
         }
 
         private void TxtSearch_LostFocus(object sender, RoutedEventArgs e)
